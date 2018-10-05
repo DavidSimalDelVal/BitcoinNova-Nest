@@ -26,8 +26,8 @@ Important notes:
 Important notes:
 
 * The wallets you create or generate will be saved to your home folder. You can keep them there or move them wherever you want.
-* Make sure *turtle-service* is not running before you start *BitcoinNova-Nest*.
-* If you encounter crashes, open the activity monitor (in your app > utilities), and force quit *turtle-service* (if it is running) before opening a wallet.
+* Make sure *Bitcoinnova-service* is not running before you start *BitcoinNova-Nest*.
+* If you encounter crashes, open the activity monitor (in your app > utilities), and force quit *Bitcoinnova-service* (if it is running) before opening a wallet.
 * The log files will be saved in ~/Library/Application Support/BitcoinNova-Nest/.
 
 ### Linux
