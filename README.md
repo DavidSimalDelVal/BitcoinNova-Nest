@@ -2,7 +2,7 @@
 
 The universal desktop GUI wallet for BitcoinNova
 
-![Logo](/bitcoinnovaestlogo.png)
+![Logo](/bitcoinnovanestlogo.png)
 
 ## Installation
 
