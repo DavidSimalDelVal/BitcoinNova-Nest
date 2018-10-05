@@ -10,7 +10,7 @@ The universal desktop GUI wallet for BitcoinNova
 
 ### Windows
 
-1. Go [here](https://github.com/DavidSimalDelVal/BitcoinNova-Nest/releases) and download the latest release called BitcoinNova **TurtleCoin-Nest-x.xx-Mac.zip**
+1. Go [here](https://github.com/DavidSimalDelVal/BitcoinNova-Nest/releases) and download the latest release called BitcoinNova **BitcoinNova-Nest-x.xx-Mac.zip**
 2. Unzip the folder and launch **BitcoinNova-Nest.exe**. (Make sure you leave everything as is in the folder)
 
 Important notes:
