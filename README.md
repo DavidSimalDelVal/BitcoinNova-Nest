@@ -10,7 +10,7 @@ The universal desktop GUI wallet for BitcoinNova
 
 ### Windows
 
-1. Go [here](https://github.com/turtlecoin/turtle-wallet-go/releases) and download the latest release called BitcoinNova **TurtleCoin-Nest-x.xx-Mac.zip**
+1. Go [here](https://github.com/DavidSimalDelVal/BitcoinNova-Nest/releases) and download the latest release called BitcoinNova **TurtleCoin-Nest-x.xx-Mac.zip**
 2. Unzip the folder and launch **BitcoinNova-Nest.exe**. (Make sure you leave everything as is in the folder)
 
 Important notes:
@@ -19,7 +19,7 @@ Important notes:
 
 ### Mac
 
-1. Go [here](https://github.com/turtlecoin/turtle-wallet-go/releases) and download the latest release called **BitcoinNova-Nest-Mac**
+1. Go [here](https://github.com/DavidSimalDelVal/BitcoinNova-Nest.git/releases) and download the latest release called **BitcoinNova-Nest-Mac**
 2. Unzip it and move the folder wherever you want or drag the application **BitcoinNova-Nest** into /Applications or any other folder.
 3. Launch the application. (If your mac complains that the app comes from an unindentified developer and does not want to open it, just right-click (or ctrl-click) on the app, and choose open > open)
 
@@ -32,9 +32,9 @@ Important notes:
 
 ### Linux
 
-1. Go [here](https://github.com/turtlecoin/turtle-wallet-go/releases) and download the latest release called **BitcoinNova-Nest-Linux.tar.gz**
+1. Go [here](https://github.com/DavidSimalDelVal/BitcoinNova-Nest/releases) and download the latest release called **BitcoinNova-Nest-Linux.tar.gz**
 2. extract it
-`$ tar xvzf TurtleCoin-Nest-x.xx-Linux.tar.gz`
+`$ tar xvzf BitcoinNova-Nest-x.xx-Linux.tar.gz`
 3. run **BitcoinNova-Nest.sh**. (Make sure you leave everything as is in the folder)
 
 Important notes:
@@ -85,7 +85,7 @@ E5MJiTWo3cNehswKbj5zmoNfwr2JVidMf3bpCswzWeJQ7g3m3Bjvb8dAvs1RXq3F6dfW1UFTNQ3yULqe
 6. Type the following commands to clone the Nest wallet, install dependencies and build the wallet.
     ```
     $ cd $HOME/go/src
-    $ git clone https://github.com/turtlecoin/turtle-wallet-go.git TurtleCoin-Nest
+    $ git clone https://github.com/DavidSimalDelVal/BitcoinNova-Nest.git BitcoinNova-Nest
     $ go get github.com/atotto/clipboard github.com/dustin/go-humanize $ github.com/mattn/go-sqlite3 github.com/mcuadros/go-version github.com/mitchellh/go-ps github.com/pkg/errors
     $ qtdeploy build desktop
     ```
