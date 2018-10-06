@@ -24,7 +24,7 @@ ApplicationWindow {
     minimumWidth: windowWidth
     minimumHeight: minWindowHeight
     color: "#333333"
-    title: "Bitcoin Nova Nest"
+    title: "BitcoinNova Nest"
     visible: true
 
     Flickable{

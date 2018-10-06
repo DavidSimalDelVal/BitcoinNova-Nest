@@ -147,7 +147,7 @@ func SendTransaction(transferAddress string, transferAmountString string, transf
 		return "", errors.New("wallet and/or blockchain not fully synced yet")
 	}
 
-	if !strings.HasPrefix(transferAddress, "BTN") || (len(transferAddress) != 95 && len(transferAddress) != 183) {
+	if !strings.HasPrefix(transferAddress, "E") || (len(transferAddress) != 95 && len(transferAddress) != 183) {
 		return "", errors.New("address is invalid")
 	}
 
@@ -805,7 +805,7 @@ func RequestConnectionInfo() (syncing string, walletBlockCount int, knownBlockCo
 // RequestFeeinfo provides the additional fee requested by the remote node for each transaction
 func RequestFeeinfo() (nodeFee float64, err error) {
 
-	_, nodeFee, _, err = bitcoinnovawalletdrpcgo.GetFeeInfo(rpcPassword)
+	_, nodeFee, _, err = bitcoinnovawalletdrpcgo.Feeinfo(rpcPassword)
 	if err != nil {
 		return 0, err
 	}

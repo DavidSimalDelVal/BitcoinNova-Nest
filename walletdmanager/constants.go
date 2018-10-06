@@ -7,7 +7,7 @@ package walletdmanager
 
 const (
 	// DefaultTransferFee is the default fee. It is expressed in BTN
-	DefaultTransferFee float64 = 0.1
+	DefaultTransferFee float64 = 0.01
 
 	logWalletdCurrentSessionFilename     = "Bitcoinnova-service-session.log"
 	logWalletdAllSessionsFilename        = "Bitcoinnova-service.log"

@@ -50,8 +50,8 @@ func RequestBalance(rpcPassword string) (availableBalance float64, lockedBalance
 		return 0, 0, 0, errors.Wrap(err, "getBalance result is nil")
 	}
 
-	availableBalance = responseMap["result"].(map[string]interface{})["availableBalance"].(float64) / 100
-	lockedBalance = responseMap["result"].(map[string]interface{})["lockedAmount"].(float64) / 100
+	availableBalance = responseMap["result"].(map[string]interface{})["availableBalance"].(float64) / 1000000
+	lockedBalance = responseMap["result"].(map[string]interface{})["lockedAmount"].(float64) / 1000000
 	totalBalance = availableBalance + lockedBalance
 
 	return availableBalance, lockedBalance, totalBalance, nil
@@ -105,8 +105,8 @@ func RequestListTransactions(blockCount int, firstBlockIndex int, addresses []st
 			transfer.PaymentID = mapTransaction["paymentId"].(string)
 			transfer.TxID = mapTransaction["transactionHash"].(string)
 			transfer.Timestamp = time.Unix(int64(mapTransaction["timestamp"].(float64)), 0)
-			transfer.Amount = mapTransaction["amount"].(float64) / 100
-			transfer.Fee = mapTransaction["fee"].(float64) / 100
+			transfer.Amount = mapTransaction["amount"].(float64) / 1000000
+			transfer.Fee = mapTransaction["fee"].(float64) / 1000000
 			transfer.Block = int(mapTransaction["blockIndex"].(float64))
 			transfer.Confirmations = blockCount - transfer.Block + 1
 			transfer.IsRecievingTransaction = transfer.Amount >= 0
@@ -140,8 +140,8 @@ func RequestStatus(rpcPassword string) (walletBlockCount int, knownBlockCount in
 // parameters amount and fee are expressed in BTN, not 0.01 BTN
 func SendTransaction(addressRecipient string, amount float64, paymentID string, fee float64, rpcPassword string) (transactionHash string, err error) {
 
-	amountInt := uint64(amount * 100) // expressed in hundredth of BTN
-	feeInt := uint64(fee * 100)       // expressed in hundredth of BTN
+	amountInt := uint64(amount * 1000000) // expressed in hundredth of BTN
+	feeInt := uint64(fee * 1000000)       // expressed in hundredth of BTN
 
 	args := make(map[string]interface{})
 	args["fee"] = feeInt
@@ -240,7 +240,7 @@ func SaveWallet(rpcPassword string) (err error) {
 // totalOutputCount is the total number of unspent outputs of the specified addresses.
 func EstimateFusion(threshold int, addresses []string, rpcPassword string) (fusionReadyCount int, totalOutputCount int, err error) {
 
-	threshold *= 100 // expressed in hundredth of BTN
+	threshold *= 1000000 // expressed in hundredth of BTN
 
 	args := make(map[string]interface{})
 	args["threshold"] = threshold
@@ -263,7 +263,7 @@ func EstimateFusion(threshold int, addresses []string, rpcPassword string) (fusi
 // parameters amount and fee are expressed in BTN, not 0.01 BTN
 func SendFusionTransaction(threshold int, addresses []string, destinationAddress string, rpcPassword string) (transactionHash string, err error) {
 
-	threshold *= 100 // expressed in hundredth of BTN
+	threshold *= 1000000 // expressed in hundredth of BTN
 
 	args := make(map[string]interface{})
 	args["threshold"] = threshold
@@ -286,11 +286,11 @@ func SendFusionTransaction(threshold int, addresses []string, destinationAddress
 
 // GetFeeInfo returns info on the fee requested by the remote node for every transactions
 // returned fee is expressed in BTN, not in 0.01 BTN
-func GetFeeInfo(rpcPassword string) (address string, fee float64, status string, err error) {
+func Feeinfo(rpcPassword string) (address string, fee float64, status string, err error) {
 
 	args := make(map[string]interface{})
 
-	payload := rpcPayloadGetFeeInfo(0, rpcPassword, args)
+	payload := rpcPayloadFeeinfo(0, rpcPassword, args)
 
 	responseMap, err := httpRequest(payload)
 	if err != nil {
@@ -316,7 +316,7 @@ func GetFeeInfo(rpcPassword string) (address string, fee float64, status string,
 
 	resultAmount := result.(map[string]interface{})["amount"]
 	if resultAmount != nil {
-		fee = resultAmount.(float64) / 100
+		fee = resultAmount.(float64) / 1000000
 	} else {
 		fee = 0
 	}
